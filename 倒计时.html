@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>
+<script>
+    setInterval(function(){
+        let now = new Date();
+        let after = new Date();
+        after.setMinutes(after.getMinutes()+10);
+        let cha = 600;
+        let min = cha/60;
+        let sec = cha%60;
+        let box=document.querySelector('.box');
+        box.innerHTML=`
+            倒计时${min}分${sec}秒
+           `
+    },1000)
+
+
+</script>

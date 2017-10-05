@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>
+<script>
+        setInterval(function(){
+            let date = new Date();
+            let now = date.getTime();
+            let zhongqiu = new Date('0:0:0 2017/10/4');
+            let zq = zhongqiu.getTime();
+            let cha = (zq-now)/1000;
+            cha=cha%(60*60*24);
+            let day = Math.floor(cha/(60*60*24));
+            cha=cha%(60*60*24);
+            let hours = Math.floor(cha/(60*60));
+            cha=cha%(60*60);
+            let min = Math.floor(cha/60 );
+            cha=cha%60;
+            let sec = Math.floor(cha);
+            let box=document.querySelector('.box');
+            box.innerHTML=`
+            倒计时${day}天${hours}小时${min}分${sec}秒
+           `
+        },1000)
+</script>
